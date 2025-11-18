@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: wasty-api
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: wasty-api
+    template:
+        metadata:
+            labels:
+                app: wasty-api
+        spec:
+            containers:
+                - name: wasty-api
+                  image: wasty-api:latest
+                  imagePullPolicy: IfNotPresent
+                  envFrom:
+                      - secretRef:
+                          name: secret-openai
+                      - configMapRef:
+                          name: configmap-wasty
+                  ports:
+                        - containerPort: 8080

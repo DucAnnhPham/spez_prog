@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wasty-chat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wasty-chat
+  template:
+    metadata:
+      labels:
+        app: wasty-chat
+    spec:
+      containers:
+        - name: wasty-chat
+          image: wasty-chat:latest
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - secretRef:
+                name: secret-openai
+            - configMapRef:
+                name: configmap-wasty
+          stdin: true
+          tty: true
+          command: ["bash","-lc","python classifier.py"]
