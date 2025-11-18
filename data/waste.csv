@@ -5,17 +5,9 @@ Backwaren ;Biotonne
 Blumen ;Biotonne
 Blumenstrauß ;Biotonne
 Eier ;Biotonne
-Eiswaffel ;Biotonne
-Erdnussschalen ;Biotonne
 Fallobst ;Biotonne
-Fischgräten ;Biotonne
 Früchte ;Biotonne
 Gartenabfall ;Biotonne
-Grasschnitt ;Biotonne
-Haare ;Biotonne
-Heckenschnitt ;Biotonne
-Holzwolle ;Biotonne
-Kaffeesatz ;Biotonne
 Kerne ;Biotonne
 Knochen ;Biotonne
 Kokosnussschalen ;Biotonne
@@ -24,109 +16,27 @@ Laub ;Biotonne
 Mangoschale ;Biotonne
 Muschelschalen ;Biotonne
 Obstreste ;Biotonne
-Pfirsichkern ;Biotonne
-Rasenschnitt ;Biotonne
-Sägespäne ;Biotonne
-Sandwichtoast ;Biotonne
-Speisereste ;Biotonne
-Südfrüchte ;Biotonne
-Toast ;Biotonne
-Tomatenstrunk ;Biotonne
-Unkraut ;Biotonne
 Wassermelonenschale ;Biotonne
 Würzelstöcke ;Biotonne
-Zitrusfrüchte ;Biotonne
-5 Minuten Terrine-Verpackung ;gelbe Tonne
 Abziehfolien - Wundpflaster, Damenbinden ;gelbe Tonne
 Alufolien (Verpackung) ;gelbe Tonne
 Anpflanztöpfe ;gelbe Tonne
-Autan Flasche (leer) ;gelbe Tonne
 Backwarenverpackung ;gelbe Tonne
-Bierfass (Einweg) ;gelbe Tonne
-Blumenerdesack ;gelbe Tonne
-Bonbonpapier (Plasik) ;gelbe Tonne
-Brotverpackung (Plastik) ;gelbe Tonne
-Camembertverpackung (Folie) ;gelbe Tonne
-CD Spindel ;gelbe Tonne
 Cockpitspraydose (leer) ;gelbe Tonne
-Crermetuben ;gelbe Tonne
 Deoroller (Plastik) ;gelbe Tonne
 Dosenfischverpackung ;gelbe Tonne
 Dressingflasche (Plastik) ;gelbe Tonne
 Einkaufstüten (Plastik) ;gelbe Tonne
-Einwegtrommel ;gelbe Tonne
-Erdnussbutterverpackung (Plastik) ;gelbe Tonne
-Essigreinigerflasche ;gelbe Tonne
-Feinkostsalat Verpackung ;gelbe Tonne
-Fertigteigverpackung ;gelbe Tonne
-Fischdosen ;gelbe Tonne
-Flakon (Parfüm) ;gelbe Tonne
 Frischhaltefolie ;gelbe Tonne
-Frühstückscerealienverpackung (Folie) ;gelbe Tonne
 Gemüsekonserven ;gelbe Tonne
-Getränkekanister ;gelbe Tonne
 Glasreinigerflasche ;gelbe Tonne
 Gummibärchentüte ;gelbe Tonne
 Hamburgerverpackung ;gelbe Tonne
 Haushaltsflaschen (Plastik) ;gelbe Tonne
 Honigflasche ;gelbe Tonne
 Ice-Tea Verpackung ;gelbe Tonne
-Instandkaffeverpackung (Folie) ;gelbe Tonne
 Kabelbinder ;gelbe Tonne
 Kaffeekapseln (entleert) ;gelbe Tonne
-Kakaopulverdose (beschichtet) ;gelbe Tonne
-Kartontube - Wassereis ;gelbe Tonne
-Kassenzettel (Papier) ;gelbe Tonne
-Katzenstreuverpackung (Folie) ;gelbe Tonne
-Keksverpackungen (Plastik) ;gelbe Tonne
-Kleiderbügel (als Verkaufsverpackung ;gelbe Tonne
-Kokosmilchverpackung (Tetrapack) ;gelbe Tonne
-Konservendosen ;gelbe Tonne
-Kräuterbutterverpackung (Alufolie) ;gelbe Tonne
-Kuchentransportbox (Einweg) ;gelbe Tonne
-Labello ;gelbe Tonne
-Lufterfrischer (Dose) ;gelbe Tonne
-Mascara ;gelbe Tonne
-Menüschalen von Fertiggerichten ;gelbe Tonne
-Milchschnittenverpackung (Folie) ;gelbe Tonne
-Molkeflasche ;gelbe Tonne
-Mundspühlung (Porzelanflasche) ;gelbe Tonne
-Nudelsosenverpackung (TetraPak) ;gelbe Tonne
-Obsttüten (Plastik) ;gelbe Tonne
-Pflanzencremeflasche ;gelbe Tonne
-Pizzafolie ;gelbe Tonne
-Portionsbeutel ;gelbe Tonne
-Proseccodose ;gelbe Tonne
-Raffaello Verpackung ;gelbe Tonne
-Reinigungsmittelflasche ;gelbe Tonne
-Saftkarton ;gelbe Tonne
-Salatkräuterverpackung (Tüte) ;gelbe Tonne
-Sandwichtoastverpackung ;gelbe Tonne
-Schaumkussverpackung ;gelbe Tonne
-Schlemmerfiletverpackung (Folie) ;gelbe Tonne
-Schraubdeckeldosen (Seifenblasen) ;gelbe Tonne
-Sektflaschenverschluss ;gelbe Tonne
-Senfflasche (Plastik) ;gelbe Tonne
-Silberpapier ;gelbe Tonne
-Softdrinkverpackung ;gelbe Tonne
-Soßenpulvververpackung (Plastik) ;gelbe Tonne
-Speiseölflaschen ;gelbe Tonne
-Steakverpackung (Folie) ;gelbe Tonne
-Styroporchips ;gelbe Tonne
-Suppenwürfelfolie ;gelbe Tonne
-Süsstoffspender ;gelbe Tonne
-Tetrapack ;gelbe Tonne
-Tiefkühlkostschachteln (beschichtet) ;gelbe Tonne
-Toastverpackung ;gelbe Tonne
-Tortenbodenverpackung ;gelbe Tonne
-Transportverpackungen ;gelbe Tonne
-Tütensuppenverpackung ;gelbe Tonne
-Vakkuumverpackung ;gelbe Tonne
-Verpackungschips ;gelbe Tonne
-Wattepadverpackung ;gelbe Tonne
-Weichkäseverpackung (Folie) ;gelbe Tonne
-Windelverpackung (Plastik) ;gelbe Tonne
-Wursteinwickelfolie ;gelbe Tonne
 Zahnpastatuben ;gelbe Tonne
 Zigarettenschachtel (Folie, Silberpapier) ;gelbe Tonne
 Apfelmus Verpackung (Glas) ;Glascontainer
@@ -170,112 +80,29 @@ Umzugskartons ;Papiertonne
 Vogelfutterschachtel ;Papiertonne
 Waschmittelkarton ;Papiertonne
 Zeitschriften ;Papiertonne
-Aqua;Restmülltonne
 Eiskugelfo;Restmülltonne
 Ablagekörbe ;Restmülltonne
-Agrarfolien ;Restmülltonne
-Alu-Brennschale - Kerze ;Restmülltonne
-Aschenbecher ;Restmülltonne
 Babyflaschen ;Restmülltonne
 Backförmchen ;Restmülltonne
-Bandage ;Restmülltonne
 Bauholz Bauschutt, Kleinmenge ;Restmülltonne
-Besteckkasten ;Restmülltonne
-Binden ;Restmülltonne
-Bleikristall ;Restmülltonne
-Brillen ;Restmülltonne
-Brotkasten ;Restmülltonne
-Büroablage ;Restmülltonne
-Butterbrotpapier ;Restmülltonne
-CD's ;Restmülltonne
-Damenstrumpfhose ;Restmülltonne
-Disketten ;Restmülltonne
-Druckerpatronen ;Restmülltonne
-DVD´s ;Restmülltonne
-Einmalhandschuhe ;Restmülltonne
-Einweggeschirr ;Restmülltonne
-Essstäbchen ;Restmülltonne
-Farbbänder ;Restmülltonne
-Felle ;Restmülltonne
-Filzbelag ;Restmülltonne
-Frisbee ;Restmülltonne
-Fusselrolle ;Restmülltonne
-Gartenschlauch ;Restmülltonne
-Geschenkkordel ;Restmülltonne
-Grablicht ;Restmülltonne
-Grillschalen ;Restmülltonne
-Gummistiefel ;Restmülltonne
-Haarklammer ;Restmülltonne
-Handtücher ;Restmülltonne
-Helm ;Restmülltonne
-Hundedecke ;Restmülltonne
-Hut ;Restmülltonne
-Inkontinenzwindeln ;Restmülltonne
 Isomatte ;Restmülltonne
 Kaffeekapseln (befüllt) ;Restmülltonne
-Kassenzettel (Thermo- Papier) ;Restmülltonne
-Kehricht ;Restmülltonne
 Kerzenglas ;Restmülltonne
-Klappbox ;Restmülltonne
 Klebstoffe (ausgehärtet) ;Restmülltonne
 Kochlöffel ;Restmülltonne
-Korbwaren ;Restmülltonne
 Kostmetiktuch ;Restmülltonne
 Kugelschreiber ;Restmülltonne
 Kunststoffspielzeug ;Restmülltonne
-Legosteine ;Restmülltonne
-Luftballons ;Restmülltonne
-Magnet ;Restmülltonne
-Malstifte ;Restmülltonne
-Mikrowellengeschier ;Restmülltonne
-Muffinblech ;Restmülltonne
-Negative ;Restmülltonne
-Oelpapier ;Restmülltonne
-Papierkorb (geflochten) ;Restmülltonne
-Pergamentpapier ;Restmülltonne
-Pflaster ;Restmülltonne
-Plasikschüssel ;Restmülltonne
-Plastikspielzeug ;Restmülltonne
-Polstermaterial ;Restmülltonne
-Putzeimer ;Restmülltonne
-Radiergummi ;Restmülltonne
-Rasierklinge ;Restmülltonne
 Röntgenbilder ;Restmülltonne
-Salatschleuder ;Restmülltonne
-Schallplatten ;Restmülltonne
-Scheibenwischer ;Restmülltonne
-Schmutzfangmatte ;Restmülltonne
-Schnüre ;Restmülltonne
-Schuhpflegemittel (ausgehärtet) ;Restmülltonne
-Schwangerschaftstest ;Restmülltonne
 Servietten ;Restmülltonne
 Sitzerhöhung ;Restmülltonne
-Spachtelmasse (ausgehärtet) ;Restmülltonne
 Spielball ;Restmülltonne
 Staubwischer ;Restmülltonne
-Streusplitt ;Restmülltonne
-Tabletten ;Restmülltonne
-Taschenlampe ;Restmülltonne
-Teelichter ;Restmülltonne
-Telefonkarten ;Restmülltonne
-Teppichkleber (fest) ;Restmülltonne
-Thermopapier ;Restmülltonne
-Tinte ;Restmülltonne
-Tischtennisschläger ;Restmülltonne
-Tonbänder ;Restmülltonne
-Trinkglas ;Restmülltonne
-Türgarderobe ;Restmülltonne
-Vase ;Restmülltonne
-Vitaminpräperate ;Restmülltonne
-Wachspapier ;Restmülltonne
 Wäscheklammer ;Restmülltonne
 Wasserfilterkartusche ;Restmülltonne
-Wasserspritzpistole ;Restmülltonne
 Wattestäbchen ;Restmülltonne
-Werkzeugkoffer ;Restmülltonne
 Wolldecken ;Restmülltonne
 Zahnseide ;Restmülltonne
-Ziegel (kleinmengen) ;Restmülltonne
 Babywanne ;Sperrmüll
 Bettfedern ;Sperrmüll
 Bilderrahmen (groß) ;Sperrmüll
@@ -283,50 +110,20 @@ Buggy ;Sperrmüll
 Couch ;Sperrmüll
 Drahtzaun ;Sperrmüll
 Fahrrad ;Sperrmüll
-Fußbodenbeläge (rollbar) ;Sperrmüll
 Gartengrill ;Sperrmüll
 Gartenstuhl ;Sperrmüll
-Gartenzaun (unbehandelt) ;Sperrmüll
 Grill ;Sperrmüll
 Holzliegestuhl ;Sperrmüll
 Hundekorb ;Sperrmüll
-Katzentoilette ;Sperrmüll
-Kinderroller ;Sperrmüll
-Kindersitz ;Sperrmüll
-Kinderwippe ;Sperrmüll
-Kleiderständer ;Sperrmüll
-Koffer ;Sperrmüll
-Kratzbaum ;Sperrmüll
-Küchenschränke ;Sperrmüll
-Kugelgrill ;Sperrmüll
-Kunststoffrasen ;Sperrmüll
-Läufer ;Sperrmüll
-Maschendrahtzaun ;Sperrmüll
+Zaun ;Sperrmüll
 Möbel ;Sperrmüll
-Pavillon ;Sperrmüll
 Polstermöbel ;Sperrmüll
 Räucherofen ;Sperrmüll
-Regentonne ;Sperrmüll
 Rutsche (klein) ;Sperrmüll
 Sandmuschel ;Sperrmüll
 Schaukelstuhl ;Sperrmüll
-Schlitten ;Sperrmüll
 Schreibtisch ;Sperrmüll
-Schubkarre ;Sperrmüll
-Schuhregal (groß) ;Sperrmüll
-Sessel ;Sperrmüll
-Ski ;Sperrmüll
-Sofa ;Sperrmüll
-Spiegel (groß) ;Sperrmüll
-Spielhaus ;Sperrmüll
-Stacheldraht ;Sperrmüll
-Strandmuschel ;Sperrmüll
-Surfbrett ;Sperrmüll
-Teleskop ;Sperrmüll
-Terrarium ;Sperrmüll
-Tisch ;Sperrmüll
 Trampolin ;Sperrmüll
 Vogelkäfig ;Sperrmüll
 Wandregal ;Sperrmüll
-Wäschespinne ;Sperrmüll
 Wickeltisch ;Sperrmüll
