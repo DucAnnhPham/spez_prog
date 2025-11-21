@@ -1,15 +1,26 @@
 import os, sys, json, re, time
+from typing import Optional
+
 import pandas as pd
 import requests
 from openai import OpenAI
+from sentence_transformers import SentenceTransformer
+
 
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 QDRANT_URL     = os.environ.get("QDRANT_URL", "http://localhost:6333")
 COLLECTION     = os.environ.get("QDRANT_COLLECTION", "wasty_docs")
 EMBED_MODEL    = os.environ.get("EMBED_MODEL", "text-embedding-3-small")
+LOCAL_MODEL    = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 TOP_K          = int(os.environ.get("TOP_K", "5"))
-MIN_SCORE      = float(os.environ.get("MIN_SCORE", "0.4"))
+MIN_SCORE      = float(os.environ.get("MIN_SCORE", "0.6"))
 BATCH_SIZE     = 50
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+if not os.path.exists("/app/data/waste.csv"):
+    DUMMY_CSV_PATH = "/app/data/waste.csv"  # Docker
+else:
+    DUMMY_CSV_PATH = os.path.join(BASE_DIR, "..", "data", "waste.csv")  # Lokal
 
 BLOCK_WORDS = {"password", "admin access", "bypass", "prompt injection"}
 
@@ -57,9 +68,16 @@ def _die(msg, code=2):
     print(f"Fehler: {msg}", file=sys.stderr)
     sys.exit(code)
 
+def get_min_score():
+    if OPENAI_API_KEY:  # bei Openai kann der score etwas niedriger sein, weil ein zu hoher Wert oft zu keinen Treffern führt
+        return 0.5      # text-embedding-3-small hat eine Dimension von 1536
+    else:               # bei lokalen Embeddings lieber etwas strenger sein
+        return 0.65     # all-MiniLM-L6-v2 hat hingegen nur eine Dimension von 384 deswefen sollten wir strenger sein
+                        # lieber verlässliche Antwort als das Risiko einer falschen Antwort auszugeben
+
+
 
 def ingest_csv(file_path: str):
-    client = OpenAI(api_key=OPENAI_API_KEY)
     try:
         df = pd.read_csv(file_path, sep=';')
     except Exception as e:
@@ -70,7 +88,7 @@ def ingest_csv(file_path: str):
         points = []
 
         texts = [f"{row['Begriff']}: {row['Entsorgungsart']}" for _, row in batch.iterrows()]
-        embeddings = embed_texts(client, texts)
+        embeddings = LOCAL_MODEL.encode(texts, show_progress_bar=False).tolist()
 
         for i, row in enumerate(batch.itertuples()):
             points.append({
@@ -90,16 +108,22 @@ def ensure_collection():
     r = requests.get(f"{QDRANT_URL}/collections/{COLLECTION}", timeout=8)
     if r.status_code == 200:
         return
-    body = {"vectors": {"size": 1536, "distance": "Cosine"}}
+    body = {"vectors": {"size": 384, "distance": "Cosine"}}
     r = requests.put(f"{QDRANT_URL}/collections/{COLLECTION}",
                      headers={"Content-Type":"application/json"},
-                     data=json.dumps(body), timeout=30)
+                     data=json.dumps(body),
+                     timeout=30)
     if r.status_code >= 400:
         _die(f"Collection-Create fehlgeschlagen: {r.status_code} {r.text}")
 
-def embed_texts(client: OpenAI, texts):
-    resp = client.embeddings.create(model=EMBED_MODEL, input=texts)
-    return [d.embedding for d in resp.data]
+def embed_texts(client: Optional[OpenAI], texts):
+    if client is not None and OPENAI_API_KEY:
+        resp = client.embeddings.create(model=EMBED_MODEL, input=texts)
+        return [d.embedding for d in resp.data]
+    else:
+        # lokale Embeddings mit SentenceTransformer
+        return LOCAL_MODEL.encode(texts, show_progress_bar=False).tolist()
+
 
 def upsert_points(points):
     payload = {"points": points}
@@ -118,7 +142,11 @@ def search_similar(vec):
     return r.json().get("result", [])
 
 def run_classifier():
-    client = OpenAI(api_key=OPENAI_API_KEY)
+    if OPENAI_API_KEY:
+        client = OpenAI(api_key=OPENAI_API_KEY)
+    else:
+        print("OpenAI-Key nicht gesetzt, nutze lokale Embeddings...")
+
     print("Müll-Klassifikator gestartet. ':exit' zum Beenden.")
 
     if any(b in os.environ.get("BLOCK_OVERRIDE","" ).lower() for b in ["true","1","yes"]):
@@ -138,10 +166,11 @@ def run_classifier():
         if any(b in q.lower() for b in blocked):
             print("Sicherheitsmeldung: Anfrage blockiert.")
             continue
-        q = q.lower().replace("ä", "ae").replace("ö", "oe").replace("ü", "ue")
-        vec = embed_texts(client, [q])[0]
+
+        q_norm = q.lower().replace("ä", "ae").replace("ö", "oe").replace("ü", "ue")
+        vec = embed_texts(client if OPENAI_API_KEY else None, [q_norm])[0]
         hits = search_similar(vec)
-        if not hits or hits[0]["score"] < MIN_SCORE:
+        if not hits or hits[0]["score"] < get_min_score():
             print("Ich weiß nicht")
             continue
 
@@ -151,13 +180,19 @@ def run_classifier():
 
 
 def main():
-    if not OPENAI_API_KEY:
-        _die("OPENAI_API_KEY ist nicht gesetzt!")
-    ensure_collection()
     if len(sys.argv) >= 3 and sys.argv[1] == "ingest":
-        csv_path = sys.argv[2]  # zb python classifier.py ingest waste.csv
+        # Alte Collection löschen, falls existiert
+        r = requests.delete(f"{QDRANT_URL}/collections/{COLLECTION}")
+        if r.status_code < 400:
+            print("Alte Collection gelöscht")
+        elif r.status_code == 404:
+            print("Collection existierte nicht, nichts zu löschen")
+        # Collection sicher neu erstellen
+        ensure_collection()
+        csv_path = sys.argv[2]
         ingest_csv(csv_path)
     else:
         run_classifier()
+
 if __name__ == "__main__":
     main()
