@@ -24,3 +24,11 @@ spec:
           stdin: true
           tty: true
           command: ["bash","-lc","python classifier.py"]
+          volumeMounts:
+            - name: data-volume
+              mountPath: /app/data
+      volumes:
+        - name: data-volume
+          configMap:
+            name: waste-data
+

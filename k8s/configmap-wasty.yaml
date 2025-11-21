@@ -5,4 +5,5 @@ data:
   QDRANT_URL: "http://qdrant:6333"
   QDRANT_COLLECTION: "wasty_docs"
   EMBED_MODEL: "text-embedding-3-small"
+  MIN_SCORE: "0.65"
   TOP_K: "5"

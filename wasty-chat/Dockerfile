@@ -13,6 +13,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY --chown=appuser:appuser . .
+COPY --chown=appuser:appuser ../data /app/data
 USER appuser
 ENV PYTHONPYCACHEPREFIX=/home/appuser/.cache/pycache
 CMD ["python", "classifier.py"]
