@@ -111,11 +111,20 @@ def health():
 def analyze(req: AnalyzeRequest):
     if any(w in req.item.lower() for w in BLOCK_WORDS):
         return {"alert": "blocked", "reason": "Sicherheits-Schlüsselwort erkannt"}
+    message = None
     use_openai = req.use_openai and OPENAI_API_KEY is not None
+    # Key nicht vorhanden → Hinweis und lokal nutzen
+    if req.use_openai and OPENAI_API_KEY is None:
+        message = "Kein OPENAI_API_KEY gesetzt, lokale Klassifikation wurde für die Klassifizierung verwendet."
+        use_openai = False
     if use_openai:
         client = OpenAI(api_key=OPENAI_API_KEY)
         category = classify_item_openai(client, req.item)
     else:
         category = classify_item_embed(req.item)
     alert = "unknown Object" if category == "ich weiß nicht" else "classified"
-    return {"alert": alert, "category": category}
+    result = {"alert": alert, "category": category}
+    if message:
+        result["message"] = message  # hier die Meldung hinzufügen
+
+    return result
